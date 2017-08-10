@@ -1,0 +1,30 @@
+
+$orange: #f27a00;
+$blue: #3678a9;
+$white: white;
+$lila: #684969;
+$yellow: #fab02e;
+$light-grey: #9f9f9f;
+$green: #71841f;
+
+@font-face {
+  font-family: 'LondrinaSolid';
+  src: url('../fonts/LondrinaSolid-Regular/LondrinaSolid-Regular.ttf')format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+@font-face {
+  font-family: 'MontserratBd';
+  src: url('../fonts/Montserrat-Bold/Montserrat-Bold.ttf')format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular/Montserrat-Regular.ttf')format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
