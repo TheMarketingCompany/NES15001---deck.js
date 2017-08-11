@@ -1,0 +1,57 @@
+$circleRadius : 300px;
+
+.blue_circle {
+  position: absolute;
+  background-color: #1e3f82;
+  left: 960-$circleRadius;
+  width: 2*$circleRadius;
+  height: 2*$circleRadius;
+  border-radius: 50%;
+  .box {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
+    background-color: $orange;
+  }
+  .circleText{
+    color: white;
+    margin-top: 0.40*$circleRadius;
+    .bigfont{
+      font-size: 136px;
+    }
+  }
+
+}
+h2 {
+  padding-top: -100 + $circleRadius;;
+}
+.circle_container {
+
+}
+
+.deg0 {
+  transform: translate($circleRadius);
+}
+.deg35 {
+  transform: rotate(35deg) translate($circleRadius) rotate(-35deg);
+}
+.deg145 {
+  transform: rotate(145deg) translate($circleRadius) rotate(-145deg);
+}
+.deg180 {
+  transform: translate(-$circleRadius);
+}
+.deg225 {
+  transform: rotate(215deg) translate($circleRadius) rotate(-215deg);
+}
+.deg285 {
+  transform: rotate(285deg) translate($circleRadius) rotate(-285deg);
+}
+.deg315 {
+  transform: rotate(325deg) translate($circleRadius) rotate(-325deg);
+}
