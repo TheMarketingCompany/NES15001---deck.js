@@ -1,422 +1,76 @@
-/* Resets and base styles from HTML5 Boilerplate */
-div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+/*
+Error: Invalid CSS after "...rotate(-160deg)": expected "{", was ";"
+        on line 46 of _nestleCircle.scss
+        from line 3 of nestle.scss
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+41: }
+42: .deg35 {
+43:   transform: rotate(35deg) translate($circleRadius) rotate(-35deg);
+44: }
+45: .deg145 {
+46: rotate(160deg) translate(532px) rotate(-160deg);
+47: }
+48: .deg180 {
+49:   transform: translate(-535px);
+50: }
+51: .deg225 {
 
-blockquote, q {
-  quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: "";
-    content: none; }
-
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none; }
-
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold; }
-
-del {
-  text-decoration: line-through; }
-
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0; }
-
-input, select {
-  vertical-align: middle; }
-
-select, input, textarea, button {
-  font: 99% sans-serif; }
-
-pre, code, kbd, samp {
-  font-family: monospace, sans-serif; }
-
-a {
-  -webkit-tap-highlight-color: transparent; }
-  a:hover, a:active {
-    outline: none; }
-
-ul, ol {
-  margin-left: 2em;
-  vertical-align: top; }
-
-ol {
-  list-style-type: decimal; }
-
-nav ul, nav li {
-  margin: 0;
-  list-style: none;
-  list-style-image: none; }
-
-small {
-  font-size: 85%; }
-
-strong, th {
-  font-weight: bold; }
-
-td {
-  vertical-align: top; }
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-textarea {
-  overflow: auto; }
-
-input[type="radio"] {
-  vertical-align: text-bottom; }
-
-input[type="checkbox"] {
-  vertical-align: bottom; }
-
-label,
-input[type="button"],
-input[type="submit"],
-input[type="image"],
-button {
-  cursor: pointer; }
-
-button, input, select, textarea {
-  margin: 0; }
-
-input:invalid, textarea:invalid {
-  border-radius: 1px;
-  -moz-box-shadow: 0px 0px 5px red;
-  -webkit-box-shadow: 0px 0px 5px red;
-  box-shadow: 0px 0px 5px red; }
-  input:invalid .no-boxshadow, textarea:invalid .no-boxshadow {
-    background-color: #f0dddd; }
-
-button {
-  width: auto;
-  overflow: visible; }
-
-select, input, textarea {
-  color: #444; }
-
-a {
-  color: #607890; }
-  a:hover, a:focus {
-    color: #036; }
-  a:link {
-    -webkit-tap-highlight-color: #fff; }
-
-/* End HTML5 Boilerplate adaptations */
-h1 {
-  font-size: 4.5em; }
-
-h1, .vcenter {
-  font-weight: bold;
-  text-align: center;
-  padding-top: 1em;
-  max-height: 100%; }
-  .csstransforms h1, .csstransforms .vcenter {
-    padding: 0 48px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    transform: translate(0, -50%); }
-
-.vcenter h1 {
-  position: relative;
-  top: auto;
-  padding: 0;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
-  transform: none; }
-
-h2 {
-  text-align: center; }
-
-h3 {
-  text-align: center; }
-
-h4 {
-  font-size: 1.25em;
-  font-weight: bold;
-  margin-bottom: .25em; }
-
-h5 {
-  font-size: 1.125em;
-  font-weight: bold;
-  margin-bottom: .2222em; }
-
-h6 {
-  font-size: 1em;
-  font-weight: bold; }
-
-img, iframe, video {
-  display: block;
-  max-width: 100%; }
-
-video, iframe, img {
-  display: block;
-  margin: 0 auto; }
-
-p, blockquote, iframe, img, ul, ol, pre, video {
-  margin-bottom: 1em; }
-
-pre {
+Backtrace:
+_nestleCircle.scss:46
+nestle.scss:3
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1207:in `expected'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1137:in `expected'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:1132:in `tok!'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:665:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:674:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:658:in `ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:684:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:125:in `stylesheet'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:406:in `_to_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:312:in `to_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:159:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:331:in `block in watch'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
   white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  padding: 1em;
-  border: 1px solid #888; }
-
-em {
-  font-style: italic; }
-
-li {
-  padding: .25em 0;
-  vertical-align: middle; }
-  li > ol, li > ul {
-    margin-bottom: inherit; }
-
-.deck-container {
-  font-size: 16px;
-  line-height: 1.25;
-  color: #444; }
-
-.slide {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%; }
-
-@font-face {
-  font-family: 'LondrinaSolid';
-  src: url("../fonts/LondrinaSolid-Regular/LondrinaSolid-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400; }
-@font-face {
-  font-family: 'MontserratBd';
-  src: url("../fonts/Montserrat-Bold/Montserrat-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400; }
-@font-face {
-  font-family: 'Montserrat';
-  src: url("../fonts/Montserrat-Regular/Montserrat-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400; }
-.blue_circle {
-  position: absolute;
-  background-color: #1e3f82;
-  left: 660px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%; }
-  .blue_circle .box {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 4em;
-    height: 4em;
-    margin: -2em;
-    background-color: #f27a00; }
-  .blue_circle .circleText {
-    color: white;
-    margin-top: 120px; }
-    .blue_circle .circleText .bigfont {
-      font-size: 136px; }
-
-h2 {
-  padding-top: 200px; }
-
-.deg0 {
-  transform: translate(300px); }
-
-.deg35 {
-  transform: rotate(35deg) translate(300px) rotate(-35deg); }
-
-.deg145 {
-  transform: rotate(145deg) translate(300px) rotate(-145deg); }
-
-.deg180 {
-  transform: translate(-300px); }
-
-.deg225 {
-  transform: rotate(215deg) translate(300px) rotate(-215deg); }
-
-.deg285 {
-  transform: rotate(285deg) translate(300px) rotate(-285deg); }
-
-.deg315 {
-  transform: rotate(325deg) translate(300px) rotate(-325deg); }
-
-#home .menu-box {
-  font-family: MontserratBd;
-  color: white;
-  font-weight: bold;
-  margin-top: 19px;
-  font-size: 24px;
-  background-color: #f27a00;
-  border-radius: 10px;
-  padding: 5px 0px 5px 0px; }
-  #home .menu-box.glyphicon {
-    padding: 10px; }
-
-body {
-  width: 1920px;
-  height: 1080px; }
-
-.slide {
-  background: url("../img/background_wood_white.jpg");
-  position: absolute;
-  width: 1920px;
-  height: 1080px; }
-
-#menubar {
-  position: absolute;
-  height: 80px;
-  width: 1920px;
-  background-color: rgba(0, 0, 0, 0.65);
-  z-index: 100; }
-  #menubar .menu-box {
-    text-align: center;
-    margin-left: 50px;
-    position: relative;
-    font-family: MontserratBd;
-    color: white;
-    width: 250px;
-    font-weight: bold;
-    margin-top: 19px;
-    font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.35);
-    border-radius: 10px;
-    padding: 5px 0px 5px 0px; }
-    #menubar .menu-box.glyphicon {
-      margin-left: 50px;
-      width: 10px;
-      font-family: 'Glyphicons Halflings';
-      padding: 10px; }
-  #menubar .menu-box:active {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black; }
-  #menubar .header-logo {
-    float: right;
-    width: 400px;
-    right: 15px; }
-    #menubar .header-logo .thomy-logo {
-      position: absolute;
-      top: 20px;
-      right: 60px;
-      max-width: 110px;
-      max-height: 60px; }
-    #menubar .header-logo .maggi-logo {
-      top: 25px;
-      margin-left: 100px;
-      margin-top: 15px;
-      max-width: 90px;
-      max-height: 65px; }
-
-.blue_Headline {
-  color: #3678a9; }
-
-h1 {
-  font-family: "LondrinaSolid";
-  font-size: 148px;
-  color: white;
-  font-weight: bold;
-  line-height: normal;
-  margin-left: 10%;
-  width: 80%; }
-
-h2 {
-  font-family: "LondrinaSolid";
-  font-size: 80px;
-  color: white;
-  font-weight: bold; }
-
-h3 {
-  font-family: "LondrinaSolid";
-  font-size: 48px;
-  color: #3678a9;
-  font-weight: bold; }
-
-h4 {
-  font-family: "LondrinaSolid";
-  font-size: 32px;
-  text-align: center;
-  color: #3678a9;
-  font-weight: bold; }
-
-p {
-  text-align: center;
-  font-family: "LondrinaSolid";
-  font-size: 24px;
-  color: #3678a9; }
-
-.bigfont {
-  font-size: 80px; }
-
-.chapter_image {
-  position: absolute;
-  z-index: -10; }
-
-.deck-status {
-  color: white; }
-
-.centerContentBox {
-  margin-top: 15%;
-  margin-left: 20%;
-  width: 60%; }
-
-.headlineSpacer {
-  margin-top: 10%;
-  margin-left: 15%;
-  width: 70%; }
-
-.blender {
-  z-index: 50;
-  position: absolute; }
-
-/*# sourceMappingURL=nestle.css.map */
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...rotate(-160deg)\": expected \"{\", was \";\"\A         on line 46 of _nestleCircle.scss\A         from line 3 of nestle.scss\A \A 41: }\A 42: .deg35 {\A 43:   transform: rotate(35deg) translate($circleRadius) rotate(-35deg);\A 44: }\A 45: .deg145 {\A 46: rotate(160deg) translate(532px) rotate(-160deg);\A 47: }\A 48: .deg180 {\A 49:   transform: translate(-535px);\A 50: }\A 51: .deg225 {"; }
