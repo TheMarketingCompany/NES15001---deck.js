@@ -19,7 +19,9 @@ $circleRadius : 300px;
     .left{
       margin-left: -250px;
     }
+  
   }
+
   .circleText{
     color: white;
     margin-top: 0.40*$circleRadius;
@@ -43,16 +45,16 @@ h2 {
   transform: rotate(35deg) translate($circleRadius) rotate(-35deg);
 }
 .deg145 {
-rotate(160deg) translate(532px) rotate(-160deg);
+transform: rotate(160deg) translate(532px) rotate(-160deg);
 }
 .deg180 {
   transform: translate(-535px);
 }
 .deg225 {
-rotate(200deg) translate(525px) rotate(-200deg)
+  transform: rotate(200deg) translate(525px) rotate(-200deg)
 }
 .deg285 {
-rotate(250deg) translate(335px) rotate(110deg)
+  transform: rotate(250deg) translate(335px) rotate(110deg)
 }
 .deg315 {
   transform: rotate(325deg) translate($circleRadius) rotate(-325deg);

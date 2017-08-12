@@ -228,19 +228,21 @@
 </section>
 <section class="slide" id="wachstumstreiberAuswahl">
 
+    <img src="themes/img/icon/Peperoni.png" class="assets peperoni treiber">
+    <img src="themes/img/icon/Kochlöffel.png" class="assets kochloeffel treiber">
+    <img src="themes/img/icon/Basilikum.png" class="assets basilikum treiber">
+    <img src="themes/img/icon/Beeren_rot.png" class="assets beeren_rot treiber">
+    <img src="themes/img/icon/Beeren-Orange.png" class="assets beeren_orange treiber">
 
     <div class="centerContentBox">
 
         <div class=" circle_container blue_circle">
-            <div class="deg0 box">
-                <img src="themes/img/icon/jetzteinfach.png">
-
-            </div>
+            <div class="deg0 box"><img src="themes/img/icon/jetzteinfach.png"></div>
             <div class="deg35 box"><img src="themes/img/icon/Genussmomente.png"></div>
-            <div class="deg145 box left"><img src="themes/img/icon/familienessen.png"></div>
+            <div class="deg145 box left"><img id="treiber-familienessen" src="themes/img/icon/familienessen.png"></div>
             <div class="deg180 box"><img src="themes/img/icon/ausgewogen.png"></div>
             <div class="deg225 box"><img src="themes/img/icon/kochen.png"></div>
-            <div class="deg285 box"><img src="themes/img/icon/trendküche.png"></div>
+            <div class="deg285 box"><img id="treiber-trendkueche" src="themes/img/icon/trendküche.png"></div>
             <div class="deg315 box"><img src="themes/img/icon/kalteküche.png"></div>
 
             <h3 class="circleText">
@@ -279,7 +281,7 @@
         </div>
     </hgroup>
 </section>
-<section class="slide" id="farmesfamilienessen">
+<section class="slide" id="familienessen">
     <img class="blender" src="img/20.jpg"/>
     <hgroup>
 
@@ -287,7 +289,7 @@
         </div>
     </hgroup>
 </section>
-<section class="slide" id="trendkueche">
+<section class="slide" id="familienessen1">
     <img class="blender" src="img/21.jpg"/>
     <hgroup>
 
@@ -295,7 +297,7 @@
         </div>
     </hgroup>
 </section>
-<section class="slide" id="trendkueche">
+<section class="slide" id="familienessen2">
     <img class="blender" src="img/22.jpg"/>
     <hgroup>
 
@@ -355,6 +357,12 @@
     $(function () {
         $.deck('.slide');
     });
+    $("#treiber-trendkueche").click(function () {
+        $.deck('go', 'trendkueche')
+    });
+    $("#treiber-familienessen").click(function () {
+        $.deck('go', 'familienessen')
+    })
 
 </script>
 </body>
