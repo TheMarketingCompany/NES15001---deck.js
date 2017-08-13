@@ -722,8 +722,8 @@ that use the API provided by core.
     },
 
     touch: {
-      swipeDirection: 'horizontal',
-      swipeTolerance: 60
+      swipeDirection: 'vertical',
+      swipeTolerance: 40
     },
 
     initLockTimeout: 10000,

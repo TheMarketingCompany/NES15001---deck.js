@@ -4,6 +4,10 @@
 @import "treiber";
 
 body {
+  width: 1920px;
+  height: 1080px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   .front-page-navigation {
     display: none;
@@ -22,6 +26,25 @@ body {
       display: none;
     }
 
+  }
+}
+
+.nav-link-container {
+  display: block;
+
+  .deck-next-link{
+    right: 50px;
+    width: 82px;
+    height: 82px;
+    background: transparent;
+
+  }
+  .deck-prev-link{
+    top: 400px;
+    right: 50px;
+    width: 82px;
+    height: 82px;
+    background: transparent;
   }
 }
 
@@ -47,14 +70,6 @@ body {
     }
 
   }
-}
-
-body {
-  width: 1920px;
-  height: 1080px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
 }
 
 .slide {
@@ -117,7 +132,8 @@ body {
       max-height: 60px;
     }
     .maggi-logo {
-      top: 25px;
+      position: absolute;
+      top: 0px;
       margin-left: 100px;
       margin-top: 15px;
       max-width: 90px;

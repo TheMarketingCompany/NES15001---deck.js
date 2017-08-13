@@ -80,13 +80,13 @@
 
   .deck-prev-link {
     left:auto;
-    right:8px;
-    top:59px;
-    @include rotate(90deg);
+    right:50px;
+    top:450px;
+    @include rotate(180deg);
   }
 
   .deck-next-link {
-    top:99px;
-    @include rotate(90deg);
+    top:550px;
+    right:50px;
   }
 }
