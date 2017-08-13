@@ -33,6 +33,18 @@
 
 
 <div id="menubar">
+    <div class="front-page-navigation">
+        <button onclick="$.deck('go', 1);" class="menu-box">Enführung</button>
+        <button onclick="$.deck('go', 2);" class="menu-box">Wachstumstreiber</button>
+        <button onclick="$.deck('go', 3);" class="menu-box">Händlerplattform</button>
+    </div>
+    <div class="sub-page-navigation">
+        <a href="#" onclick="$.deck('go', 0);" class="menu-box">HOME</a>
+        <button id="breadCrumbStep1" onclick="$.deck('go', 2);" class="menu-box">Wachstumstreiber</button>
+        <span> > </span>
+        <button id="breadCrumbStep2" onclick="$.deck('go', 3);" class="menu-box">Händlerplattform</button>
+    </div>
+
     <div class="header-logo">
         <div class="maggi-logo">
             <img src="themes/img/Maggi_logo.svg">
@@ -42,7 +54,7 @@
         </div>
     </div>
 </div>
-<!--div class="">
+<!--    div class="">
   <p id="home-Button" class="" aria-hidden="true"></p>
 </div>
 <div class="menu-box">
@@ -89,7 +101,7 @@
     <img class="chapter_image" src="themes/img/home.jpg"/>
 </section>
 
-<section class="slide" id="einfuhrung">
+<section class="slide" id="einfuehrung">
     <img class="blender" src="img/3.jpg"/>
     <h2 class="blue_Headline centerContentBox">Unsere Vision zum
         Kochen und Essen für ein
@@ -364,6 +376,37 @@
     $("#treiber-familienessen").click(function () {
         $.deck('go', 'familienessen')
     })
+
+    $(document).bind('deck.change', function(event, from, to) {
+
+        var newSlideId = $.deck('getSlides')[to][0].id;
+        console.log('Moving from slide ' + from + ' to ' + to + " -> SlideId:" + newSlideId);
+        try {
+            var breadCrumbData = breadCrumbs[newSlideId];
+            $("#breadCrumbStep1").html(breadCrumbData["s1-Name"]);
+            $("#breadCrumbStep1").attr("onclick","$.deck('go', "+breadCrumbData["s1-goto"] + ");");
+            $("#breadCrumbStep2").html(breadCrumbData["s2-Name"]);
+        } catch (e) {
+            $("#breadCrumbStep1").html("Kapitel??");
+            $("#breadCrumbStep2").html("Slide??");
+        }
+
+
+    });
+
+
+    var breadCrumbs = {
+        "einfuehrung" : {
+            "s1-Name" : "Kapitel A",
+            "s1-goto" : 10,
+            "s2-Name" : "Slide A"
+        },
+        "e2" : {
+            "s1-Name" : "Kapitel A",
+            "s1-goto" : 10,
+            "s2-Name" : "Slide B"
+        }
+    }
 
 </script>
 </body>

@@ -3,6 +3,35 @@
 @import "nestleCircle";
 @import "treiber";
 
+body {
+
+  .front-page-navigation {
+    display: none;
+  }
+
+  .sub-page-navigation {
+    display: block;
+  }
+
+  &.on-slide-intro {
+    .front-page-navigation {
+      display: block;
+    }
+
+    .sub-page-navigation {
+      display: none;
+    }
+
+  }
+}
+
+.sub-page-navigation {
+  span {
+    font-size: 30px;
+    color: white;
+  }
+}
+
 #home {
   .menu-box {
     font-family: MontserratBd;
@@ -166,7 +195,8 @@ p {
   margin-left: 15%;
   width: 70%;
 }
-.blender{
+
+.blender {
   left: 0px;
   top: 0px;
   width: 1920px;

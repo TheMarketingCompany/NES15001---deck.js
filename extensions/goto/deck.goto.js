@@ -30,7 +30,7 @@ the deck container.
     var options = $.deck('getOptions');
     var $datalist = $(options.selectors.gotoDatalist);
 
-    $.each($.deck('getSlides'), function(i, $slide) {
+        $.each($.deck('getSlides'), function(i, $slide) {
       var id = $slide.attr('id');
       if (id) {
         $datalist.append('<option value="' + id + '">');
