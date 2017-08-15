@@ -1,5 +1,5 @@
 .deck-prev-link, .deck-next-link {
-  display:none;
+  display:block;
   position:absolute;
   z-index:3;
   top:50%;
@@ -29,13 +29,7 @@
   right:8px;
 }
 
-.deck-container:hover .deck-prev-link, .deck-container:hover .deck-next-link {
-  display:block;
 
-  &.deck-nav-disabled, .touch & {
-    display:none;
-  }
-}
 
 @media print {
   .deck-prev-link, .deck-next-link {

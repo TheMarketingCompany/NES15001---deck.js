@@ -319,8 +319,28 @@ body {
   overflow-y: hidden; }
   body .front-page-navigation {
     display: none; }
+  body .deck-container:hover .deck-prev-link, body .deck-container:hover .deck-next-link {
+    display: block; }
+    body .deck-container:hover .deck-prev-link.deck-nav-disabled, .touch body .deck-container:hover .deck-prev-link, body .deck-container:hover .deck-next-link.deck-nav-disabled, .touch body .deck-container:hover .deck-next-link {
+      display: block; }
   body .sub-page-navigation {
     display: block; }
+    body .sub-page-navigation .homeButton {
+      margin-top: 5px; }
+    body .sub-page-navigation .breadcrumbNext {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 5px;
+      font-size: 50px;
+      font-weight: bold;
+      color: #f27a00; }
+    body .sub-page-navigation a.menu-box {
+      font-size: 42px;
+      background-color: transparent; }
+    body .sub-page-navigation a:link {
+      text-decoration: none; }
+    body .sub-page-navigation a:visited {
+      text-decoration: none; }
   body.on-slide-intro .front-page-navigation {
     display: block; }
   body.on-slide-intro .sub-page-navigation {
@@ -344,6 +364,19 @@ body {
   font-size: 30px;
   color: white; }
 
+.menu-box {
+  float: left;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: MontserratBd;
+  color: #f27a00;
+  font-weight: bold;
+  margin-top: 19px;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 5px 0px 5px 0px; }
+
 #home .menu-box {
   font-family: MontserratBd;
   color: white;
@@ -353,11 +386,10 @@ body {
   background-color: #f27a00;
   border-radius: 10px;
   padding: 5px 0px 5px 0px; }
-  #home .menu-box.glyphicon {
-    padding: 10px; }
 
 .slide {
   background: url("../img/background_wood_white.jpg");
+  background-repeat: no-repeat;
   position: absolute;
   width: 1920px;
   height: 1080px; }
@@ -368,44 +400,33 @@ body {
   width: 1920px;
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 100; }
-  #menubar .menu-box {
-    text-align: center;
+  #menubar.glyphicon {
     margin-left: 50px;
-    position: relative;
-    font-family: MontserratBd;
-    color: white;
-    width: 250px;
-    font-weight: bold;
-    margin-top: 19px;
-    font-size: 24px;
+    width: 10px;
+    font-family: 'Glyphicons Halflings';
+    padding: 10px; }
+  #menubar button {
     background-color: rgba(255, 255, 255, 0.35);
-    border-radius: 10px;
-    padding: 5px 0px 5px 0px; }
-    #menubar .menu-box.glyphicon {
-      margin-left: 50px;
-      width: 10px;
-      font-family: 'Glyphicons Halflings';
-      padding: 10px; }
-  #menubar .menu-box:active {
+    color: #f27a00; }
+  #menubar .buttin:active {
     background-color: rgba(255, 255, 255, 0.9);
     color: black; }
   #menubar .header-logo {
     float: right;
-    width: 400px;
+    width: 260px;
     right: 15px; }
     #menubar .header-logo .thomy-logo {
       position: absolute;
-      top: 20px;
-      right: 60px;
-      max-width: 110px;
-      max-height: 60px; }
+      top: 20px; }
+      #menubar .header-logo .thomy-logo img {
+        height: 31px; }
     #menubar .header-logo .maggi-logo {
       position: absolute;
-      top: 0px;
-      margin-left: 100px;
-      margin-top: 15px;
-      max-width: 90px;
-      max-height: 65px; }
+      top: 20px;
+      right: 60px;
+      margin-left: 100px; }
+      #menubar .header-logo .maggi-logo img {
+        height: 31px; }
 
 .blue_Headline {
   color: #3678a9; }

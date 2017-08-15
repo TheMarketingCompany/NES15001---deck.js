@@ -34,23 +34,24 @@
 
 <div id="menubar">
     <div class="front-page-navigation">
-        <button onclick="$.deck('go', 1);" class="menu-box">Enführung</button>
-        <button onclick="$.deck('go', 2);" class="menu-box">Wachstumstreiber</button>
-        <button onclick="$.deck('go', 3);" class="menu-box">Händlerplattform</button>
+        <div onclick="$.deck('go', 'einfuehrung');" class="menu-box">Einführung</div>
+        <div onclick="$.deck('go', 'wachstumstreiberIntro');" class="menu-box">Wachstumstreiber</div>
+        <div onclick="$.deck('go', 'handlerplatformen');" class="menu-box">Händlerplattform</div>
     </div>
     <div class="sub-page-navigation">
-        <a href="#" onclick="$.deck('go', 0);" class="menu-box">HOME</a>
-        <button id="breadCrumbStep1" onclick="$.deck('go', 2);" class="menu-box">Wachstumstreiber</button>
-        <span> > </span>
-        <button id="breadCrumbStep2" onclick="$.deck('go', 3);" class="menu-box">Händlerplattform</button>
+        <a href="#" onclick="$.deck('go', 0);" class="menu-box homeButton breadCrumb">&#9776;</a>
+        <div id="breadCrumbStep1" onclick="" class="menu-box">Wachstumstreiber</div>
+        <div class="menu-box breadcrumbNext "> > </div>
+        <div id="breadCrumbStep2" onclick="" class="bredCrumb menu-box">Händlerplattform</div>
     </div>
 
     <div class="header-logo">
-        <div class="maggi-logo">
-            <img src="themes/img/Maggi_logo.svg">
-        </div>
+
         <div class="thomy-logo">
             <img src="themes/img/Thomy-logo.png">
+        </div>
+        <div class="maggi-logo">
+            <img src="themes/img/Maggi-logo.png">
         </div>
     </div>
 </div>
@@ -92,7 +93,7 @@
 
 <!-- Begin slides. Just make elements with a class of slide. -->
 
-<section id="intro" class="home slide "  >
+<section id="intro" class="home slide ">
     <hgroup>
         <h1>Mit Inspiration zum Kochen gemeinsam
             wachsen</h1>
@@ -326,13 +327,84 @@
         </div>
     </hgroup>
 </section>
+<section class="slide" id="aktivierungsplatformen">
+
+    <img src="themes/img/icon/Peperoni.png" class="assets peperoni treiber">
+    <img src="themes/img/icon/Kochlöffel.png" class="assets kochloeffel treiber">
+    <img src="themes/img/icon/Basilikum.png" class="assets basilikum treiber">
+    <img src="themes/img/icon/Beeren_rot.png" class="assets beeren_rot treiber">
+    <img src="themes/img/icon/Beeren-Orange.png" class="assets beeren_orange treiber">
+
+    <div class="centerContentBox">
+
+        <div class=" circle_container blue_circle">
+            <div class="deg0 box"><img src="themes/img/icon/jetzteinfach.png"></div>
+            <div class="deg35 box"><img src="themes/img/icon/Genussmomente.png"></div>
+            <div class="deg145 box left"><img id="treiber-familienessen" src="themes/img/icon/familienessen.png"></div>
+            <div class="deg180 box"><img src="themes/img/icon/ausgewogen.png"></div>
+            <div class="deg225 box"><img src="themes/img/icon/kochen.png"></div>
+            <div class="deg285 box"><img id="treiber-trendkueche" src="themes/img/icon/trendküche.png"></div>
+            <div class="deg315 box"><img src="themes/img/icon/kalteküche.png"></div>
+
+            <h3 class="circleText">
+                Unsere<br>
+                <span class="bigfont">Vision</span>
+                <br>
+                zum Kochen und Essen<br>
+                für ein nachhaltiges<br>
+                Wachstum<br>
+            </h3>
+
+        </div>
+    </div>
+</section>
+<section class="slide" id="kaltesaucen1">
+    <img class="blender" src="img/25.jpg"/>
+    <hgroup>
+
+        <h1 class="blue_Headline">Bild </h1>
+        </div>
+    </hgroup>
+</section>
+<section class="slide" id="kaltesaucen2">
+    <img class="blender" src="img/26.jpg"/>
+    <hgroup>
+
+        <h1 class="blue_Headline">Bild </h1>
+        </div>
+    </hgroup>
+</section>
+<section class="slide" id="kaltesaucen3">
+    <img class="blender" src="img/27.jpg"/>
+    <hgroup>
+
+        <h1 class="blue_Headline">Bild </h1>
+        </div>
+    </hgroup>
+</section>
+<section class="slide" id="kaltesaucen4">
+    <img class="blender" src="img/28.jpg"/>
+    <hgroup>
+
+        <h1 class="blue_Headline">Bild </h1>
+        </div>
+    </hgroup>
+</section>
+<section class="slide" id="kaltesaucen5">
+    <img class="blender" src="img/29.jpg"/>
+    <hgroup>
+
+        <h1 class="blue_Headline">Bild </h1>
+        </div>
+    </hgroup>
+</section>
 <!-- End slides. -->
 
 <!-- Begin extension snippets. Add or remove as needed. -->
 
 <!-- deck.navigation snippet -->
 <div class="nav-link-container" aria-role="navigation">
-    <a href="#" class="deck-prev-link" title="Previous">
+    <a href="#" class="deck-prev-link sub-page-navigation" title="Previous">
         <img src="themes/img/icon/up.png">
     </a>
     <a href="#" class="deck-next-link" title="Next">
@@ -381,15 +453,16 @@
         $.deck('go', 'familienessen')
     })
 
-    $(document).bind('deck.change', function(event, from, to) {
+    $(document).bind('deck.change', function (event, from, to) {
 
         var newSlideId = $.deck('getSlides')[to][0].id;
         console.log('Moving from slide ' + from + ' to ' + to + " -> SlideId:" + newSlideId);
         try {
             var breadCrumbData = breadCrumbs[newSlideId];
             $("#breadCrumbStep1").html(breadCrumbData["s1-Name"]);
-            $("#breadCrumbStep1").attr("onclick","$.deck('go', "+breadCrumbData["s1-goto"] + ");");
+            $("#breadCrumbStep1").attr("onClick", "$.deck('go','"+ breadCrumbData["s1-goto"] +"');");
             $("#breadCrumbStep2").html(breadCrumbData["s2-Name"]);
+            $("#breadCrumbStep2").attr("onClick", "$.deck('go','"+ breadCrumbData["s1-goto"] +"');");
         } catch (e) {
             $("#breadCrumbStep1").html("Kapitel??");
             $("#breadCrumbStep2").html("Slide??");
@@ -400,16 +473,176 @@
 
 
     var breadCrumbs = {
-        "einfuehrung" : {
-            "s1-Name" : "Kapitel A",
-            "s1-goto" : 10,
-            "s2-Name" : "Slide A"
+
+        "einfuehrung": {
+            "s1-Name": "Einführung",
+            "s1-goto": "einfuehrung",
+            "s2-Name": "Intro"
         },
-        "e2" : {
-            "s1-Name" : "Kapitel A",
-            "s1-goto" : 10,
-            "s2-Name" : "Slide B"
+        "e2": {
+            "s1-Name": "Einführung",
+            "s1-goto": "einfuehrung",
+            "s2-Name": "Einführung 1"
+        },
+        "e3": {
+            "s1-Name": "Einführung",
+            "s1-goto": "einfuehrung",
+            "s2-Name": "Einführung 2"
+        },
+        "e4": {
+            "s1-Name": "Einführung",
+            "s1-goto": "einfuehrung",
+            "s2-Name": "Einführung 3"
+        },
+        "e5": {
+            "s1-Name": "Einführung",
+            "s1-goto": "einfuehrung",
+            "s2-Name": "Einführung 4"
+        },
+        "neueWelt": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Intro"
+        },
+        "n1": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 1"
+        },
+        "n2": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 2"
+        },
+        "n3": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 3"
+        },
+        "n4": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 4"
+        },
+        "n5": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 5"
+        },
+        "n6": {
+            "s1-Name": "Neue Welt",
+            "s1-goto": "neueWelt",
+            "s2-Name": "Slide 6"
+        },
+        "wachstumstreiberIntro": {
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Intro"
+        },
+        "wachstumstreiberAuswahl": {
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Auswahl"
+        },
+        "trendkueche":{
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Trendküche",
+            "s2-goto": "trendkueche",
+            "s3-Name": "Intro",
+            "s3-goto": "trendkueche",
+        },
+        "trendkueche":{
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Trendküche",
+            "s2-goto": "trendkueche",
+            "s3-Name": "Intro",
+            "s3-goto": "trendkueche",
+        },
+        "trendkueche1":{
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Trendküche",
+            "s2-goto": "trendkueche",
+            "s3-Name": "Home",
+        },
+        "trendkueche2":{
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Trendküche",
+            "s2-goto": "trendkueche",
+            "s3-Name": "Slide 1",
+        },
+        "familienessen": {
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Familienessen",
+            "s2-goto": "familienessen",
+            "s3-Name": "Intro",
+        },
+        "familienessen1": {
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Familienessen",
+            "s2-goto": "familienessen",
+            "s3-Name": "Slide 1",
+        },
+        "familienessen2": {
+            "s1-Name": "Wachstumstreiber ",
+            "s1-goto": "wachstumstreiberAuswahl",
+            "s2-Name": "Familienessen",
+            "s2-goto": "familienessen",
+            "s3-Name": "Slide 2",
+        },
+        "handlerplatformen":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "Auswahl",
+        },
+        "aktivierungsplatformen":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "aktivierungsplatformen",
+            "s3-Name": "Intro"
+        },
+        "kaltesaucen1":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "kaltesaucen",
+            "s3-Name": "Slide 1"
+        },
+        "kaltesaucen2":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "kaltesaucen",
+            "s3-Name": "Slide 2"
+        },
+        "kaltesaucen3":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "kaltesaucen",
+            "s3-Name": "Slide 3"
+        },
+        "kaltesaucen4":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "kaltesaucen",
+            "s3-Name": "Slide 4"
+        },
+        "kaltesaucen5":{
+            "s1-Name": "Händlerplattformen",
+            "s1-goto": "handlerplatformen",
+            "s2-Name": "AktivierungsPlattformen",
+            "s2-goto": "kaltesaucen",
+            "s3-Name": "Slide 5"
         }
+
     }
 
 </script>
