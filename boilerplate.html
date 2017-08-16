@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=1920, user-scalable=yes">
 
-    <title>Your deck.js Presentation</title>
+    <title>Nestlé // Category Growth</title>
 
     <!-- Required stylesheet -->
     <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
     <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
     <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+    <link rel="stylesheet" media="screen" href="extensions/hover/hover-min.css">
 
     <!-- Style theme. More available in /themes/style/ or create your own. -->
     <link rel="stylesheet" media="screen" href="themes/style/nestle.css">
@@ -34,14 +35,14 @@
 
 <div id="menubar">
     <div class="front-page-navigation">
-        <div onclick="$.deck('go', 'einfuehrung');" class="menu-box">Einführung</div>
-        <div onclick="$.deck('go', 'wachstumstreiberIntro');" class="menu-box">Wachstumstreiber</div>
-        <div onclick="$.deck('go', 'handlerplatformen');" class="menu-box">Händlerplattform</div>
+        <div onclick="$.deck('go', 'einfuehrung');" class="menu-box hvr-bounce-in active">Einführung</div>
+        <div onclick="$.deck('go', 'wachstumstreiberIntro');" class="menu-box hvr-bounce-in">Wachstumstreiber</div>
+        <div onclick="$.deck('go', 'handlerplatformen');" class="menu-box hvr-bounce-in">Händlerplattform</div>
     </div>
     <div class="sub-page-navigation">
         <a href="#" onclick="$.deck('go', 0);" class="menu-box homeButton breadCrumb">&#9776;</a>
         <div id="breadCrumbStep1" onclick="" class="menu-box">Wachstumstreiber</div>
-        <div class="menu-box breadcrumbNext "> > </div>
+        <div class="menu-box breadcrumbNext "> ></div>
         <div id="breadCrumbStep2" onclick="" class="bredCrumb menu-box">Händlerplattform</div>
     </div>
 
@@ -55,51 +56,24 @@
         </div>
     </div>
 </div>
-<!--    div class="">
-  <p id="home-Button" class="" aria-hidden="true"></p>
-</div>
-<div class="menu-box">
-  <p class="" id="einfuehrungBtn">
-    Einführung
-  </p>
-</div>
-<div class="menu-box">
-  <p class="" id="wachstumstreiberBtn">
-    Wachstumstreiber
-  </p>
-</div>
-<div class="menu-box">
-  <p class="" id="handlerplatformBtn">
-    Händlerplattform
-  </p>
-</div>
-</div>
-<div class="header-logo">
-<img class="maggi-logo" src="img/Maggi_logo.svg">
 
-<img class="thomy-logo" src="img/Thomy-logo.png">
-</div>
-</div>
-<!--div class="navbuttons text-center">
-<div id="navbuttonback" class="Pt-btn navbutton">
-<p class="glyphicon glyphicon-chevron-up up"></p>
-</div>
-<div id="navbuttonforward" class="Pt-btn navbutton">
-<p class="glyphicon glyphicon-chevron-down down "></p>
-</div>
-</div>
-
-<div class="deck-container">
-
-<!-- Begin slides. Just make elements with a class of slide. -->
 
 <section id="intro" class="home slide ">
     <hgroup>
-        <h1>Mit Inspiration zum Kochen gemeinsam
-            wachsen</h1>
+        <h1>Mit Inspiration zum Kochen gemeinsam wachsen</h1>
     </hgroup>
     <img class="blender" src="img/1.jpg"/>
     <img class="chapter_image" src="themes/img/home.jpg"/>
+    <div class="buttonContainerLowerThird">
+        <div class="buttonContainerLowerThird-inner">
+        <button onclick="$.deck('go', 'einfuehrung');" class="menu-box hvr-bounce-in active">Growth Vision</button>
+        <button onclick="$.deck('go', 'einfuehrung');" class="menu-box hvr-bounce-in active">Neue Welt des Kochens und
+            Essens
+        </button>
+        </div>
+    </div>
+
+
 </section>
 
 <section class="slide" id="einfuehrung">
@@ -407,6 +381,9 @@
     <a href="#" class="deck-prev-link sub-page-navigation" title="Previous">
         <img src="themes/img/icon/up.png">
     </a>
+    <div class="slideNumber">
+        <span class="currentSlide">1</span><span class="slideCount"> / 23</span>
+    </div>
     <a href="#" class="deck-next-link" title="Next">
         <img src="themes/img/icon/Down.png">
     </a>
@@ -451,22 +428,47 @@
     });
     $("#treiber-familienessen").click(function () {
         $.deck('go', 'familienessen')
-    })
+    });
+
+    $(".front-page-navigation .menu-box").click(function () {
+        $(".front-page-navigation .menu-box").removeClass("active");
+        $(this).addClass("active");
+    });
+
+
+
+    $(document).ready(function () {
+        $('.slideCount').html(" / " + $.deck('getSlides').length);
+    });
 
     $(document).bind('deck.change', function (event, from, to) {
 
         var newSlideId = $.deck('getSlides')[to][0].id;
+        var oldSlideId = $.deck('getSlides')[from][0].id;
         console.log('Moving from slide ' + from + ' to ' + to + " -> SlideId:" + newSlideId);
         try {
             var breadCrumbData = breadCrumbs[newSlideId];
             $("#breadCrumbStep1").html(breadCrumbData["s1-Name"]);
-            $("#breadCrumbStep1").attr("onClick", "$.deck('go','"+ breadCrumbData["s1-goto"] +"');");
+            $("#breadCrumbStep1").attr("onClick", "$.deck('go','" + breadCrumbData["s1-goto"] + "');");
             $("#breadCrumbStep2").html(breadCrumbData["s2-Name"]);
-            $("#breadCrumbStep2").attr("onClick", "$.deck('go','"+ breadCrumbData["s1-goto"] +"');");
+            $("#breadCrumbStep2").attr("onClick", "$.deck('go','" + breadCrumbData["s1-goto"] + "');");
+
+            // stop video on old slide
+            $("#" + oldSlideId + " video").each(function () {
+                this.pause();
+                this.currentTime = 0;
+            });
+            $("#" + newSlideId + " video").each(function () {
+                this.play();
+            });
+
+
         } catch (e) {
             $("#breadCrumbStep1").html("Kapitel??");
             $("#breadCrumbStep2").html("Slide??");
         }
+
+        $(".currentSlide").html(to + 1);
 
 
     });
@@ -544,7 +546,7 @@
             "s1-goto": "wachstumstreiberAuswahl",
             "s2-Name": "Auswahl"
         },
-        "trendkueche":{
+        "trendkueche": {
             "s1-Name": "Wachstumstreiber ",
             "s1-goto": "wachstumstreiberAuswahl",
             "s2-Name": "Trendküche",
@@ -552,7 +554,7 @@
             "s3-Name": "Intro",
             "s3-goto": "trendkueche",
         },
-        "trendkueche":{
+        "trendkueche": {
             "s1-Name": "Wachstumstreiber ",
             "s1-goto": "wachstumstreiberAuswahl",
             "s2-Name": "Trendküche",
@@ -560,14 +562,14 @@
             "s3-Name": "Intro",
             "s3-goto": "trendkueche",
         },
-        "trendkueche1":{
+        "trendkueche1": {
             "s1-Name": "Wachstumstreiber ",
             "s1-goto": "wachstumstreiberAuswahl",
             "s2-Name": "Trendküche",
             "s2-goto": "trendkueche",
             "s3-Name": "Home",
         },
-        "trendkueche2":{
+        "trendkueche2": {
             "s1-Name": "Wachstumstreiber ",
             "s1-goto": "wachstumstreiberAuswahl",
             "s2-Name": "Trendküche",
@@ -595,47 +597,47 @@
             "s2-goto": "familienessen",
             "s3-Name": "Slide 2",
         },
-        "handlerplatformen":{
+        "handlerplatformen": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "Auswahl",
         },
-        "aktivierungsplatformen":{
+        "aktivierungsplatformen": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",
             "s2-goto": "aktivierungsplatformen",
             "s3-Name": "Intro"
         },
-        "kaltesaucen1":{
+        "kaltesaucen1": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",
             "s2-goto": "kaltesaucen",
             "s3-Name": "Slide 1"
         },
-        "kaltesaucen2":{
+        "kaltesaucen2": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",
             "s2-goto": "kaltesaucen",
             "s3-Name": "Slide 2"
         },
-        "kaltesaucen3":{
+        "kaltesaucen3": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",
             "s2-goto": "kaltesaucen",
             "s3-Name": "Slide 3"
         },
-        "kaltesaucen4":{
+        "kaltesaucen4": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",
             "s2-goto": "kaltesaucen",
             "s3-Name": "Slide 4"
         },
-        "kaltesaucen5":{
+        "kaltesaucen5": {
             "s1-Name": "Händlerplattformen",
             "s1-goto": "handlerplatformen",
             "s2-Name": "AktivierungsPlattformen",

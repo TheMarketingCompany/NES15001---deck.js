@@ -24,6 +24,7 @@ body {
     display: block;
     .homeButton{
       margin-top: 5px ;
+      color : #FFF;
     }
     .breadcrumbNext {
       margin-left: 0px;
@@ -32,6 +33,8 @@ body {
       font-size: 50px;
       font-weight: bold;
       color: $orange;
+      font-family: Montserrat;
+
     }
 
     a {
@@ -80,34 +83,83 @@ body {
   }
 }
 
-.sub-page-navigation {
-  span {
-    font-size: 30px;
-    color: white;
+.front-page-navigation {
+
+  padding: 15px 30px;
+
+  .menu-box {
+    float: left;
+    text-align: center;
+    margin-right: 30px;
+    font-family: MontserratBd;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background-color: #5e5e5b;
+    cursor: pointer;
+
+    &.active {
+      color: #f27a00;
+    }
+
   }
-}
-.menu-box {
-  float: left;
-  text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  font-family: MontserratBd;
-  color: $orange;
 
-  font-weight: bold;
-  margin-top: 19px;
-  font-size: 24px;
-
-  border-radius: 10px;
-  padding: 5px 0px 5px 0px;
+  .menu-box:hover
+  {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 
 }
+
+.sub-page-navigation {
+
+
+
+  span {
+    font-size: 20px;
+    color: white;
+    font-family: Montserrat;
+  }
+
+  .menu-box {
+    float: left;
+    text-align: center;
+    margin-right: 30px;
+    font-family: MontserratBd;
+    color: #f27a00;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px 25px;
+
+  }
+
+  #breadCrumbStep1 {
+    padding: 0px;
+    margin: 30px 0px 0px 0px;
+    cursor: pointer;
+  }
+
+  #breadCrumbStep2 {
+    padding: 0px;
+    margin: 30px 0px 0px 0px;
+    font-family: Montserrat;
+    cursor: pointer;
+  }
+
+}
+
+
 
 #home {
   .menu-box {
     font-family: MontserratBd;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 
     margin-top: 19px;
     font-size: 24px;
@@ -256,4 +308,52 @@ p {
   height: 1080px;
   z-index: 50;
   position: absolute;
+}
+
+.slideNumber {
+  right: 0px;
+  top: 930px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 33px;
+  font-family: Montserrat;
+  color: #1e3f82;
+  text-align: center;
+  width: 180px;
+}
+
+.csstransitions.csstransforms .deck-prev-link {
+  top: 850px !important;
+}
+
+.csstransitions.csstransforms .deck-next-link {
+  top: 995px !important;
+}
+
+.buttonContainerLowerThird {
+  height : 1920px;
+
+  .buttonContainerLowerThird-inner {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+
+    button {
+      border : 0px;
+      text-align: center;
+      margin-right: 30px;
+      font-family: Montserrat;
+      color: #fff;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 10px;
+      padding: 10px 40px;
+      background-color: #f27a00;
+      cursor: pointer;
+    }
+
+  }
+
 }
